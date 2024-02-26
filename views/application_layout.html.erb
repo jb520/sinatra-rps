@@ -20,7 +20,16 @@
       <a href="/scissors">Play Scissors</a>
   </div>
 
+  <%if @player_choice%>
+    <h2>We played <%= @player_choice %>!</h2>
+    <h2>They played <%= @computer_choice %>!</h2>
     <%= yield %>
 
+    <div class="navbar">
+      <a href="/">Rules</a>
+  <% else %>
+    <%= yield %>
+  <% end %>
+    </div>
   </body>
 </html>
